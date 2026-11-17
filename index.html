@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>নিকাহনামা — সোলাইমান ও নাহিন</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Noto+Serif+Bengali:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1f1a;--bg2:#102c25;--gold:#e8c26a;--gold2:#fff1c1;--rose:#f2b8c6;--text:#f5efe0;--muted:#b9c7bd;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font-family:'Hind Siliguri',sans-serif;overflow-x:hidden;line-height:1.8}
+h1,h2,h3,.serif{font-family:'Noto Serif Bengali',serif}
+section{position:relative;padding:90px 20px;text-align:center;overflow:hidden}
+.alt{background:linear-gradient(var(--bg2),var(--bg))}
+h2{color:var(--gold);font-size:clamp(1.6rem,6vw,2.4rem);margin-bottom:10px}
+.orn{color:var(--gold);letter-spacing:10px;opacity:.8;margin-bottom:30px}
+/* fairy lights */
+#lights{position:fixed;top:env(safe-area-inset-top,0px);left:0;width:100%;height:90px;z-index:20;pointer-events:none}
+.bulb{position:absolute;width:11px;height:15px;border-radius:50% 50% 55% 55%;animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.35;filter:brightness(.8)}50%{opacity:1;filter:brightness(1.4)}}
+#wire{position:absolute;top:0;left:0;width:100%;height:100%}
+/* hero */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:radial-gradient(ellipse at 50% 30%,#1c4a3d 0%,var(--bg) 70%)}
+.star{position:absolute;background:#fff;border-radius:50%;animation:tw 3s infinite}
+.moon{position:absolute;top:110px;right:12%;width:70px;height:70px;border-radius:50%;box-shadow:inset -18px 6px 0 0 var(--gold2);filter:drop-shadow(0 0 18px var(--gold));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.lantern{position:absolute;bottom:-80px;width:34px;height:46px;border-radius:40% 40% 30% 30%;background:linear-gradient(#ffd27a,#ff9a3c);box-shadow:0 0 30px 10px rgba(255,170,60,.5);animation:rise linear infinite;opacity:.85}
+@keyframes rise{to{transform:translateY(-120vh) translateX(30px)}}
+.bismillah{font-family:'Noto Serif Bengali';color:var(--gold2);font-size:1.1rem;margin-bottom:16px;text-shadow:0 0 14px var(--gold)}
+#hero h1{font-size:clamp(2.2rem,9vw,4.2rem);line-height:1.4;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;animation:glow 3s ease-in-out infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 0 14px rgba(232,194,106,.7))}}
+.amp{font-size:2rem;color:var(--rose);display:block;animation:beat 1.6s infinite}
+@keyframes beat{50%{transform:scale(1.25)}}
+.hint{position:absolute;bottom:26px;color:var(--muted);animation:float 2s infinite}
+/* reveal */
+.rv{opacity:0;transform:translateY(50px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.rv.l{transform:translateX(-80px)}.rv.r{transform:translateX(80px)}.rv.z{transform:scale(.7)}
+.rv.in{opacity:1;transform:none}
+/* arch decoration */
+.arch{width:min(320px,80%);margin:0 auto 30px;aspect-ratio:3/4;border-radius:999px 999px 14px 14px;border:3px solid var(--gold);padding:12px;box-shadow:0 0 40px rgba(232,194,106,.35)}
+.arch div{height:100%;border-radius:999px 999px 8px 8px;background:radial-gradient(circle at 50% 35%,rgba(255,241,193,.25),transparent 60%),repeating-linear-gradient(45deg,#14382f 0 12px,#10302a 12px 24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.flowers{font-size:2rem;letter-spacing:6px}
+.cards{display:grid;gap:24px;max-width:900px;margin:0 auto;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(232,194,106,.4);border-radius:20px;padding:30px 20px;backdrop-filter:blur(4px)}
+.card h3{color:var(--gold2);font-size:1.5rem}
+.card small{color:var(--rose);display:block}
+/* certificate */
+.cert{max-width:640px;margin:0 auto;padding:34px 22px;background:#f8efd6;color:#3a2c0e;border-radius:10px;outline:3px double #b8892b;outline-offset:-12px;box-shadow:0 0 50px rgba(232,194,106,.35);text-align:left}
+.cert h2{color:#7a5410;text-align:center}
+.row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed #b8892b;padding:8px 0;flex-wrap:wrap}
+.row b{color:#7a5410}
+.sig{display:flex;justify-content:space-around;margin-top:34px;text-align:center;font-size:.9rem}
+.sig span{display:block;border-top:1px solid #3a2c0e;padding-top:4px;min-width:90px}
+/* timeline */
+.tl{max-width:560px;margin:0 auto;border-left:2px solid var(--gold);text-align:left;padding-left:26px}
+.tl div{position:relative;margin-bottom:30px}
+.tl div::before{content:"";position:absolute;left:-35px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 14px var(--gold)}
+.tl b{color:var(--gold2)}
+.petal{position:fixed;top:-30px;z-index:5;pointer-events:none;animation:fall linear forwards;font-size:18px}
+@keyframes fall{to{transform:translate(60px,110vh) rotate(540deg)}}
+footer{padding:60px 20px 90px;text-align:center;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="lights"><svg id="wire" preserveAspectRatio="none"></svg></div>
+
+<section id="hero">
+  <div class="moon"></div>
+  <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+  <p class="rv z" style="color:var(--rose)">শুভ বিবাহ ও নিকাহনামা</p>
+  <h1 class="rv z">মো: সোলাইমান<span class="amp">❤</span>জান্নাতুল নাঈম নাহিন</h1>
+  <p class="rv" style="color:var(--muted);margin-top:14px">আল্লাহর রহমতে দুটি হৃদয়ের পবিত্র বন্ধন</p>
+  <div class="hint">স্ক্রল করুন ↓</div>
+</section>
+
+<section class="alt">
+  <div class="orn rv">✦ ✦ ✦</div>
+  <h2 class="rv">দোয়া ও আমন্ত্রণ</h2>
+  <p class="rv" style="max-width:560px;margin:0 auto;color:var(--muted)">“আর তাঁর নিদর্শনাবলির মধ্যে রয়েছে, তিনি তোমাদের জন্য তোমাদের মধ্য থেকেই সঙ্গিনী সৃষ্টি করেছেন, যাতে তোমরা তাদের কাছে প্রশান্তি পাও।” <br><small>— সূরা আর-রূম, ৩০:২১</small></p>
+</section>
+
+<section>
+  <h2 class="rv">আমাদের জুটি</h2>
+  <div class="orn rv">❖</div>
+  <div class="arch rv z"><div><span class="flowers">🌹🌸🌹</span><span class="serif" style="color:var(--gold2)">সোলাইমান ❤ নাহিন</span><span class="flowers">🌷🌸🌷</span></div></div>
+  <div class="cards">
+    <div class="card rv l"><small>বর</small><h3>মো: সোলাইমান</h3><p style="color:var(--muted)">নতুন জীবনের পথে এক অনন্য যাত্রা</p></div>
+    <div class="card rv r"><small>কনে</small><h3>জান্নাতুল নাঈম নাহিন</h3><p style="color:var(--muted)">ভালোবাসা ও দোয়ায় ঘেরা এক নতুন অধ্যায়</p></div>
+  </div>
+</section>
+
+<section class="alt">
+  <h2 class="rv">নিকাহনামা</h2>
+  <div class="orn rv">✦ ✦ ✦</div>
+  <div class="cert rv z">
+    <h2>বিবাহ নিবন্ধন সনদ</h2>
+    <div class="row"><b>বরের নাম</b><span>মো: সোলাইমান</span></div>
+    <div class="row"><b>কনের নাম</b><span>জান্নাতুল নাঈম নাহিন</span></div>
+    <div class="row"><b>বিবাহের তারিখ</b><span id="d1">২০ নভেম্বর ২০২৬</span></div>
+    <div class="row"><b>স্থান</b><span id="d2">মজহারুল ঊলুম গাউছিয়া ফাযিল ডিগ্রি মাদ্রাসা</span></div>
+    <div class="row"><b>দেনমোহর</b><span id="d3">১৬ লাখ টাকা</span></div>
+    <div class="sig"><span>বর</span><span>কনে</span><span>কাজী</span><span>সাক্ষী</span></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="rv">অনুষ্ঠানসূচি</h2>
+  <div class="orn rv">❖</div>
+  <div class="tl">
+    <div class="rv l"><b>🌿 গায়ে হলুদ</b><br>রঙ, হাসি আর আনন্দের সন্ধ্যা</div>
+    <div class="rv l"><b>🕌 আকদ ও নিকাহ</b><br>কাজী ও সাক্ষীদের উপস্থিতিতে পবিত্র বন্ধন</div>
+    <div class="rv l"><b>🎉 বৌভাত / ওয়ালিমা</b><br>আত্মীয়স্বজনের দোয়া ও প্রীতিভোজ</div>
+  </div>
+</section>
+
+<footer class="rv">
+  <div class="serif" style="color:var(--gold);font-size:1.2rem">বারাকাল্লাহু লাকুমা ওয়া বারাকা আলাইকুমা<br>ওয়া জামাআ বাইনাকুমা ফি খাইর</div>
+  <p style="margin-top:14px">আপনাদের দোয়া ও উপস্থিতি কামনায় — সোলাইমান ও নাহিনের পরিবার</p>
+</footer>
+
+<script>
+// fairy lights
+(function(){
+  const box=document.getElementById('lights'),svg=document.getElementById('wire');
+  const cols=['#ffd27a','#ff9ab5','#8be9c1','#9ec5ff','#fff1c1'];
+  function draw(){
+    box.querySelectorAll('.bulb').forEach(b=>b.remove());
+    const w=innerWidth,n=Math.floor(w/42),pts=[];
+    for(let i=0;i<=n;i++){const x=i*w/n,y=14+Math.abs(Math.sin(i/n*Math.PI*4))*26;pts.push([x,y]);
+      if(i<n){const b=document.createElement('i');b.className='bulb';b.style.cssText=`left:${x-5}px;top:${y}px;background:${cols[i%5]};box-shadow:0 0 14px 4px ${cols[i%5]};animation-delay:${(i%7)*.3}s`;box.appendChild(b);}}
+    svg.setAttribute('viewBox',`0 0 ${w} 90`);
+    svg.innerHTML=`<polyline points="${pts.map(p=>p.join(',')).join(' ')}" fill="none" stroke="#7a5a1c" stroke-width="1.5"/>`;
+  }
+  draw();addEventListener('resize',draw);
+})();
+// stars & lanterns
+const hero=document.getElementById('hero');
+for(let i=0;i<45;i++){const s=document.createElement('i');s.className='star';const z=Math.random()*2.5+1;s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*80}%;width:${z}px;height:${z}px;animation-delay:${Math.random()*3}s`;hero.appendChild(s)}
+for(let i=0;i<8;i++){const l=document.createElement('i');l.className='lantern';l.style.cssText=`left:${5+i*12}%;animation-duration:${14+Math.random()*10}s;animation-delay:${Math.random()*10}s`;hero.appendChild(l)}
+// scroll reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// parallax moon
+addEventListener('scroll',()=>{document.querySelector('.moon').style.marginTop=(scrollY*.3)+'px'},{passive:true});
+// falling petals
+setInterval(()=>{const p=document.createElement('i');p.className='petal';p.textContent=['🌸','🌹','🌺'][Math.random()*3|0];p.style.left=Math.random()*100+'vw';p.style.animationDuration=(6+Math.random()*5)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),11000)},1200);
+</script>
+</body>
+</html>

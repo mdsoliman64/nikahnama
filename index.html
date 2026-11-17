@@ -61,10 +61,35 @@ h2{color:var(--gold);font-size:clamp(1.6rem,6vw,2.4rem);margin-bottom:10px}
 @keyframes fall{to{transform:translate(60px,110vh) rotate(540deg)}}
 footer{padding:60px 20px 90px;text-align:center;color:var(--muted)}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:30;pointer-events:none}
+#hero h1{background-size:200% 100%;animation:glow 3s ease-in-out infinite alternate,shimmer 4s linear infinite}
+@keyframes shimmer{to{background-position:200% 0}}
+.cd{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+.cd div{min-width:68px;padding:10px 8px;border:1px solid rgba(232,194,106,.5);border-radius:14px;background:rgba(255,255,255,.06);animation:float 3s ease-in-out infinite}
+.cd div:nth-child(2){animation-delay:.4s}.cd div:nth-child(3){animation-delay:.8s}.cd div:nth-child(4){animation-delay:1.2s}
+.cd b{display:block;font-size:1.7rem;color:var(--gold2);font-family:'Noto Serif Bengali',serif}
+.cd small{color:var(--muted)}
+.celebrate{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;border:0;border-radius:30px;padding:12px 18px;font:600 1rem 'Hind Siliguri',sans-serif;color:#3a2c0e;background:linear-gradient(90deg,var(--gold),var(--gold2));box-shadow:0 0 20px rgba(232,194,106,.6);cursor:pointer;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.heart{position:absolute;bottom:-30px;pointer-events:none;animation:rise linear infinite;opacity:.8}
+.card:hover{transform:translateY(-8px) rotate(-1deg)}
+.cert{position:relative;overflow:hidden}
+.cert::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 4s infinite;pointer-events:none}
+@keyframes shine{to{left:130%}}
+.tl div.in::before{animation:ping 2s infinite}
+@keyframes ping{50%{box-shadow:0 0 26px 8px var(--gold)}}
+.arch{animation:sway 5s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(1.5deg) scale(1.02)}}
+.poems{max-width:640px;margin:0 auto;display:grid;gap:22px}
+.poem{padding:26px 20px;border:1px solid rgba(232,194,106,.4);border-radius:20px;background:rgba(255,255,255,.05)}
+.poem h3{color:var(--gold2);font-size:1.3rem;margin-bottom:8px}
+.poem p{color:var(--text);line-height:2.1}
 </style>
 </head>
 <body>
 <div id="lights"><svg id="wire" preserveAspectRatio="none"></svg></div>
+<canvas id="fx"></canvas>
+<button class="celebrate" id="cel">🎉 উদযাপন করুন</button>
 
 <section id="hero">
   <div class="moon"></div>
@@ -72,6 +97,7 @@ footer{padding:60px 20px 90px;text-align:center;color:var(--muted)}
   <p class="rv z" style="color:var(--rose)">শুভ বিবাহ ও নিকাহনামা</p>
   <h1 class="rv z">মো: সোলাইমান<span class="amp">❤</span>জান্নাতুল নাঈম নাহিন</h1>
   <p class="rv" style="color:var(--muted);margin-top:14px">আল্লাহর রহমতে দুটি হৃদয়ের পবিত্র বন্ধন</p>
+  
   <div class="hint">স্ক্রল করুন ↓</div>
 </section>
 
@@ -106,12 +132,12 @@ footer{padding:60px 20px 90px;text-align:center;color:var(--muted)}
 </section>
 
 <section>
-  <h2 class="rv">অনুষ্ঠানসূচি</h2>
+  <h2 class="rv">শুভকামনার কবিতা</h2>
   <div class="orn rv">❖</div>
-  <div class="tl">
-    <div class="rv l"><b>🌿 গায়ে হলুদ</b><br>রঙ, হাসি আর আনন্দের সন্ধ্যা</div>
-    <div class="rv l"><b>🕌 আকদ ও নিকাহ</b><br>কাজী ও সাক্ষীদের উপস্থিতিতে পবিত্র বন্ধন</div>
-    <div class="rv l"><b>🎉 বৌভাত / ওয়ালিমা</b><br>আত্মীয়স্বজনের দোয়া ও প্রীতিভোজ</div>
+  <div class="poems">
+    <div class="poem rv l"><h3>🌹 দুটি হৃদয়</h3><p>দুটি হৃদয় এক হলো আজ রবের নামে,<br>নতুন সুখের গল্প শুরু এই ধরাধামে।<br>হাতে হাত, মনে মন, দোয়ার ছায়া,<br>ভালোবাসায় গড়ুক ওরা স্বপ্নমায়া।</p></div>
+    <div class="poem rv r"><h3>🌸 নতুন সংসার</h3><p>সকালবেলার আলোর মতো হাসি,<br>তোমাদের ঘরে ছড়াক খুশির রাশি।<br>সুখে-দুখে থেকো দুজন কাছাকাছি,<br>সব দোয়া আজ তোমাদের সঙ্গে আছি।</p></div>
+    <div class="poem rv z"><h3>🤲 দোয়া</h3><p>রহমতের বৃষ্টি ঝরুক তোমাদের ’পরে,<br>শান্তি থাকুক জীবনভর তোমাদের ঘরে।<br>সবর আর শুকরে ভরে উঠুক প্রতিটি দিন,<br>ভালোবাসা না হোক কভু ম্লান বা মলিন।</p></div>
   </div>
 </section>
 
@@ -146,6 +172,19 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 addEventListener('scroll',()=>{document.querySelector('.moon').style.marginTop=(scrollY*.3)+'px'},{passive:true});
 // falling petals
 setInterval(()=>{const p=document.createElement('i');p.className='petal';p.textContent=['🌸','🌹','🌺'][Math.random()*3|0];p.style.left=Math.random()*100+'vw';p.style.animationDuration=(6+Math.random()*5)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),11000)},1200);
+// floating hearts
+for(let i=0;i<10;i++){const h=document.createElement('i');h.className='heart';h.textContent=['❤','💖','💕'][i%3];h.style.cssText=`left:${4+i*10}%;font-size:${14+Math.random()*16}px;animation-duration:${9+Math.random()*8}s;animation-delay:${Math.random()*8}s`;hero.appendChild(h)}
+// fireworks, confetti and sparkle trail
+const cv=document.getElementById('fx'),cx=cv.getContext('2d'),fc=['#ffd27a','#ff9ab5','#8be9c1','#9ec5ff','#fff1c1'];let ps=[];
+function sz(){cv.width=innerWidth;cv.height=innerHeight}sz();addEventListener('resize',sz);
+function burst(x,y){for(let i=0;i<70;i++){const a=Math.random()*6.283,s=Math.random()*5+1.5;ps.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,c:fc[i%5],r:2.2})}}
+function loop(){cx.clearRect(0,0,cv.width,cv.height);ps=ps.filter(p=>p.l>0);for(const p of ps){p.x+=p.vx;p.y+=p.vy;p.vy+=.06;p.vx*=.985;p.l-=.014;cx.globalAlpha=Math.max(p.l,0);cx.fillStyle=p.c;cx.beginPath();cx.arc(p.x,p.y,p.r,0,6.283);cx.fill()}requestAnimationFrame(loop)}loop();
+function show(){for(let i=0;i<5;i++)setTimeout(()=>burst(innerWidth*(.15+Math.random()*.7),innerHeight*(.15+Math.random()*.4)),i*350)}
+document.getElementById('cel').onclick=show;
+addEventListener('pointerdown',e=>{if(e.target.id!=='cel')burst(e.clientX,e.clientY)});
+addEventListener('pointermove',e=>{ps.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.5,vy:Math.random()*1.5,l:.8,c:'#ffe9a8',r:1.8})},{passive:true});
+setTimeout(show,1200);
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)show()}),{threshold:.6}).observe(document.querySelector('.cert'));
 </script>
 </body>
 </html>
